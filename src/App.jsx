@@ -40,12 +40,12 @@ function App() {
   };
 
   return (
-    <div className="w-screen h-screen flex flex-row">
+    <div className="w-screen min-h-screen flex flex-col lg:flex-row">
       <Instructions />
-      <div className="w-1/2 h-screen flex flex-col items-center mt-16">
+      <div className="relative w-full lg:w-1/2 lg:h-screen flex flex-col items-center py-16">
         <div className="w-[400px] flex flex-col items-center">
           <AppNavBar />
-          <img src={thumbsUp} className="rounded-full h-16 w-16 mt-16"></img>
+          <img src={thumbsUp} className="rounded-full h-16 w-16 lg:mt-16"></img>
           <p className="text-4xl mt-8 font-bold">Welcome!</p>
           <form onSubmit={handleSubmit} className="flex-1 flex flex-col w-full">
             <label htmlFor="name" className="text-xs mt-5">
@@ -79,16 +79,16 @@ function App() {
                 ): ("Submit")
               }
             </button>
-            {error !== null && <p className="text-red-500 text-xs mt-2">{error}</p>}
+            <div className="text-center my-2 text-xs">
+              <p>
+                Don&apos;t have an account yet?
+                <Link to="/signup"> Sign up</Link>
+              </p>
+            </div>
+            {error !== null && <p className="text-red-500 text-center text-xs mt-2">{error}</p>}
           </form>       
         </div>
 
-        <div className="absolute bottom-0 text-center my-2 text-xs">
-          <p>
-            Don&apos;t have an account yet?
-            <Link to="/signup"> Sign up</Link>
-          </p>
-        </div>
       </div>
     </div>
   );

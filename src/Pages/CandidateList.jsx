@@ -94,7 +94,7 @@ const CandidateList = () => {
   return (
     <div className="flex flex-col justify-between h-screen bg-gray-100 p-12">
       {mode === MODE.NEVER && <div className="flex flex-col items-center">
-        <p className="text-4xl font-semibold text-[#1753EF] uppercase">{currentRole !== null && ListTitles[currentRole.id]}</p>
+        <p className="text-2xl text-center lg:text-4xl font-semibold text-[#1753EF] uppercase">{currentRole !== null && ListTitles[currentRole.id]}</p>
       </div>}
       <div className="flex-1 flex flex-col gap-4 items-center justify-center">
       {
@@ -106,7 +106,7 @@ const CandidateList = () => {
       }
       {
         mode === MODE.NEVER && candidates?.map((candidate) => (
-          <div key={candidate.id} onClick={() => setSelectedCandidate(candidate.id)} className="flex flex-row items-center gap-6">
+          <div key={candidate.id} onClick={() => setSelectedCandidate(candidate.id)} className="flex flex-row items-center gap-4 lg:gap-6">
           <button 
             to={`/candidatelist?role=${role.id}`}
             className="flex items-center justify-center bg-white border border-[#30AC25] font-bold h-[50px] w-[300px] rounded m-2"
@@ -135,10 +135,10 @@ const CandidateList = () => {
       {
         mode === MODE.VOTED && (
           <div className="flex flex-col gap-6 justify-center items-center">
-            <div className="w-[240px] h-[240px] p-8 flex items-center justify-center rounded-full border-[12px] border-[#30AC25]">
+            <div className="w-[180px] h-[180px] lg:w-[240px] lg:h-[240px] p-6 lg:p-8 flex items-center justify-center rounded-full border-[8px] lg:border-[12px] border-[#30AC25]">
               <img src={DoneIcon} className="w-full h-full" alt="done" />
             </div>
-            <p className="text-lg uppercase">YOUR VOTE HAS SUCCESSFULLY BEEN CAST</p>
+            <p className="text-lg text-center uppercase">YOUR VOTE HAS SUCCESSFULLY BEEN CAST</p>
             <button
             onClick={() => navigate("/categories")}
               className="flex items-center justify-center text-white bg-[#30AC25D9] font-bold h-[50px] w-[300px] rounded-xl"
@@ -152,7 +152,8 @@ const CandidateList = () => {
       {mode === MODE.NEVER && <div className="flex flex-col items-center">
         <button 
           onClick={submitVote}
-          className="flex items-center justify-center text-white bg-[#30AC25D9] font-bold h-[50px] w-[500px] rounded-xl m-2 mb-6"
+          disabled={selectedCandidate === null}
+          className="flex items-center justify-center text-white bg-[#30AC25D9] disabled:bg-[#4e904873] font-bold h-[50px] w-full lg:w-[500px] rounded-xl m-2 mb-6"
         >
           {
             isLoadingSubmit ? (

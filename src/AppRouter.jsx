@@ -1,15 +1,28 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Categories from "./Pages/Categories";
+import App from "./App.jsx";
+import Categories from "./Pages/Categories.jsx";
+import CandidateList from "./Pages/CandidateList.jsx";
+import AuthenticationPage from "./Pages/AuthenticationPage.jsx";
+import CandidateForm from "./Pages/CandidateForm.jsx";
+import ConfirmOTP from "./Pages/ConfirmOTP.jsx";
+import CreateUserForm from "./Pages/UserSignUp.jsx";
+import ProtectPages from "./protectPages.jsx";
 
 const AppRouter = () => {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route element={<ProtectPages />}>
+          <Route path="/authenticationpage" element={<AuthenticationPage />} />
           <Route path="/categories" element={<Categories />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+          <Route path="/candidatelist" element={<CandidateList />} />
+          <Route path="/confirmotp" element={<ConfirmOTP />} />
+        </Route>
+        <Route path="/signup" element={<CreateUserForm />} />
+        <Route path="/candidateform" element={<CandidateForm />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

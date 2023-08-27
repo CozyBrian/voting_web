@@ -43,7 +43,7 @@ function App() {
     <div className="w-screen min-h-screen flex flex-col lg:flex-row">
       <Instructions />
       <div className="relative w-full lg:w-1/2 lg:h-screen flex flex-col items-center py-16">
-        <div className="w-[400px] flex flex-col items-center">
+        <div className="w-full px-3 lg:w-[400px] flex flex-col items-center">
           <AppNavBar />
           <img src={thumbsUp} className="rounded-full h-16 w-16 lg:mt-16"></img>
           <p className="text-4xl mt-8 font-bold">Welcome!</p>

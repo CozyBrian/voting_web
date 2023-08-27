@@ -42,14 +42,14 @@ const AuthenticationPage = () => {
             <img src={BiometricIcon} className="w-full h-full group-hover:hidden " />
             <img src={BiometricWhiteIcon} className="w-full h-full hidden group-hover:block" />
           </div>
-          <p className="lg:text-xl leading-6">Biometric Authenitcation</p>
+          <p className="lg:text-xl leading-6">Biometric Authentication</p>
         </button>
         <button onClick={() => navigate("/confirmotp")} className="group shrink-0 w-[140px] h-[140px] lg:w-[200px] lg:h-[200px] flex flex-col gap-3 items-center justify-center bg-white hover:bg-[#2A17FF] hover:text-white rounded-2xl duration-150">
           <div className="w-10 lg:w-16 lg:h-16">
             <img src={PhoneIcon} className="w-full h-full group-hover:hidden " />
             <img src={PhoneWhiteIcon} className="w-full h-full hidden group-hover:block" />
           </div>
-          <p className="lg:text-xl leading-6">OTP <br /> Authenitcation</p>
+          <p className="lg:text-xl leading-6">OTP <br /> Authentication</p>
         </button>
       </div>
       <div className="flex flex-col items-center">

@@ -1,0 +1,1 @@
+export const API_URL = "https://voting-server-q3qm.onrender.com";

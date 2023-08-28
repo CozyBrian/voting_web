@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="w-screen min-h-screen flex flex-col lg:flex-row">
       <Instructions />
-      <div className="relative w-full lg:w-1/2 lg:h-screen flex flex-col items-center py-16">
+      <div className="relative w-full lg:w-1/2 lg:h-screen flex flex-col items-center justify-between py-16">
         <div className="w-full px-3 lg:w-[400px] flex flex-col items-center">
           <AppNavBar />
           <img src={thumbsUp} className="rounded-full h-16 w-16 lg:mt-16"></img>
@@ -88,7 +88,11 @@ function App() {
             {error !== null && <p className="text-red-500 text-center text-xs mt-2">{error}</p>}
           </form>       
         </div>
-
+        <div className="mt-8">
+          <button
+            onClick={() => navigate("/admin")}
+          className="rounded-full w-[200px] py-2 bg-[#2A17FF] text-white font-medium">Go To Admin</button>
+        </div>
       </div>
     </div>
   );

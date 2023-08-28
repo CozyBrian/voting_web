@@ -8,6 +8,7 @@ import ConfirmOTP from "./Pages/ConfirmOTP.jsx";
 import CreateUserForm from "./Pages/UserSignUp.jsx";
 import ProtectPages from "./protectPages.jsx";
 import Results from "./Pages/results.jsx";
+import Admin from "./Pages/admin.jsx";
 
 const AppRouter = () => {
   return (
@@ -20,6 +21,7 @@ const AppRouter = () => {
           <Route path="/candidatelist" element={<CandidateList />} />
           <Route path="/confirmotp" element={<ConfirmOTP />} />
         </Route>
+        <Route path="/admin" element={<Admin />} />
         <Route path="/results" element={<Results />} />
         <Route path="/signup" element={<CreateUserForm />} />
         <Route path="/candidateform" element={<CandidateForm />} />
